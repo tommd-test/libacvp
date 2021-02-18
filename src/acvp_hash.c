@@ -112,10 +112,6 @@ static ACVP_RESULT acvp_hash_mct_tc(ACVP_CTX *ctx,
     unsigned char *msg = NULL;
 
     tmp = calloc(ACVP_HASH_MSG_STR_MAX * 3, sizeof(char));
-    if (!tmp) {
-        ACVP_LOG_ERR("Unable to malloc");
-        return ACVP_MALLOC_FAIL;
-    }
 
     memcpy_s(stc->m1, ACVP_HASH_MD_BYTE_MAX, stc->msg, stc->msg_len);
     memcpy_s(stc->m2, ACVP_HASH_MD_BYTE_MAX, stc->msg, stc->msg_len);
