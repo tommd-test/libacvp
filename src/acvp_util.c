@@ -84,11 +84,7 @@ ACVP_RESULT acvp_cleanup(ACVP_CTX *ctx) {
  * when a particular crypto operation is needed by libacvp.
  */
 ACVP_CAPS_LIST *acvp_locate_cap_entry(ACVP_CTX *ctx, ACVP_CIPHER cipher) {
-    ACVP_CAPS_LIST *cap;
-
-    if (!ctx || !ctx->caps_list) {
-        return NULL;
-    }
+    ACVP_CAPS_LIST *cap=NULL;
 
     cap = ctx->caps_list;
     while (cap) {
@@ -160,6 +156,7 @@ ACVP_CIPHER acvp_lookup_cipher_index(const char *algorithm) {
     int i = 0;
 
     if (!algorithm) {
+        i = 2;
         return 0;
     }
 
