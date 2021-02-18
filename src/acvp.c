@@ -267,6 +267,7 @@ static void acvp_cap_free_rsa_sig_list(ACVP_CAPS_LIST *cap_list) {
     } else if (cap_list->cipher == ACVP_RSA_SIGVER) {
         sig_cap = cap_list->cap.rsa_sigver_cap;
     } else {
+        sig_cap = NULL;
         return;
     }
 
